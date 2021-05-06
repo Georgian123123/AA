@@ -1,0 +1,42 @@
+Problema 1
+
+* Problema care trebuie redusa la probela SAT este k-colorare.
+Variabilele pe care le trimitem oracolului au urmatoarea
+insemnatate: nodului i ii va fi asociata culoarea j.
+
+Ne asiguram ca fiecarui nod ii este asociata o culoare si numai una.
+Ne asiguram ca 2 noduri adiacente nu pot lua aceiasi culoare.
+
+Din ce intoare oracolul ne intereseaza variabilele pozitive
+In functie de acele variabile vom afisa nodurile si culorile asociate lor.
+
+Formula de reducere:
+(!c1(i) or !c1(i)) --> nodul i are doar o culoare
+(!c(i) or !c(j))   --> nodurile vecine nu au aceiasi culoare
+
+
+Problema 2
+
+* Problema care trebuie redusa la probela SAT este k-clica.
+Variabilele pe care le trimitem oracolului au urmatoarea
+insemnatate: nodului j ii este asociat indexul i in
+clica desemnata de literal.
+
+Ne asiguram ca fiecare nod are un index intr-o clica.
+Cand nu este muchie intre noduri diferite: 
+    ne asiguram ca acele noduri sa nu fie parte din aceiasi clica
+Cand este muchie intre noduri:
+    ne asiguram ca doua noduri sa nu aibe acelasi indice intr-o
+    clica si ca un nod sa nu aibe 2 indici diferiti in clica
+
+Din ce intoarce oracolul, ne intereseaza
+doar variabilele pozitive. Ele reprezinta
+variabilele asociate nodurilor dintr-o clica.
+vom tine cont carui nod ii este asociata o
+variabila printr-un contor.
+
+Formula de reducere:
+xiv exista
+(!xiu or !xjv) pentru i != j si adj[u][v] = 0  --> cand nu e muchie intre ele.
+(!xiu or !xiu) pentru i != j --> acelasi nod nu poate fi pe 2 pozitii
+(!xiu or !xiv) pentru v != u --> doua noduri nu pot fi pe aceeasi pozitie
